@@ -1,5 +1,10 @@
 需要注意的tf变换关系
 
+在robotmaster的小车上1号1机器人上面
+
+雷达在底盘，imu倒着放。
+
+
 
 ## 在VLP16 liosam中
 
