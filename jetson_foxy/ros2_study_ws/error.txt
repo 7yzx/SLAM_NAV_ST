@@ -1,0 +1,17 @@
+ERROR] [cartographer_node-1]: process[cartographer_node-1] failed to terminate '5' seconds after receiving 'SIGINT', escalating to 'SIGTERM'
+
+AttributeError: 'tuple' object has no attribute 'describe_sub_entities'
+
+
+
+git clone https://github.com/ros-planning/navigation2.git -b foxy-devel
+
+
+
+e following packages have unmet dependencies:
+ ros-humble-gazebo-dev : Depends: gazebo but it is not installable
+                         Depends: libgazebo-dev but it is not installable
+E: Unable to correct problems, you have held broken packages.
+
+
+[controller_server-4] [INFO] [1730100952.504210292] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist

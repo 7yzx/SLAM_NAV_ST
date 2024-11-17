@@ -1,0 +1,31 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/zen/ros2_lidar_ws/install/rslidar_msg/include/**",
+        "/home/zen/ROS2_SLAM_WS/install/rtabmap_slam/include/**",
+        "/home/zen/ROS2_SLAM_WS/install/rtabmap_odom/include/**",
+        "/home/zen/ROS2_SLAM_WS/install/rtabmap_util/include/**",
+        "/home/zen/ROS2_SLAM_WS/install/rtabmap_sync/include/**",
+        "/home/zen/ROS2_SLAM_WS/install/rtabmap_rviz_plugins/include/**",
+        "/home/zen/ROS2_SLAM_WS/install/rtabmap_conversions/include/**",
+        "/home/zen/ROS2_SLAM_WS/install/orbbec_camera/include/**",
+        "/home/zen/ROS2_SLAM_WS/install/orbbec_camera_msgs/include/**",
+        "/home/zen/ROS2_SLAM_WS/install/astra_camera/include/**",
+        "/home/zen/ROS2_SLAM_WS/install/astra_camera_msgs/include/**",
+        "/opt/ros/foxy/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-arm64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
