@@ -9,7 +9,7 @@
 
 
 
-* [ ] robot_location  融合一下imu和odom，
+* [ ] robot_location  融合一下imu和odom，这个用不了就用https://blog.csdn.net/KYJL888/article/details/113315100   https://www.ncnynl.com/archives/201708/1909.html
 * [ ] 以及使用odom的cartographer建图效果，
 * [ ] 并且尝试在程序里写一个巡航的功能。
 
@@ -31,7 +31,8 @@ catkin_create_pkg gmapping_my_pkg std_msgs roscpp rospy sensor_msgs message_gene
 ## BUG记录
 
 ### move_base中
-
+不错的解决方案
+https://blog.csdn.net/YiYeZhiNian/article/details/122351506
 1. 
 
 [ WARN] [1731850170.450399371]: Trajectory Rollout planner initialized with param meter_scoring not set. Set it to true to make your settings robust against changes of costmap resolution.
