@@ -48,8 +48,20 @@ https://answers.ros.org/question/188847/hydro-error-in-move_baselaunch/
 
 meter_scoring : true
 
-2
+#### map更新
 
 [ WARN] [1731850775.977229267]: Map update loop missed its desired rate of 10.0000Hz... the loop actually took 4.8501 seconds
 
 cpu 性能不够，地图太大了。
+
+
+
+
+#### 融合ekf
+
+问题一：odom斜方差
+https://blog.csdn.net/datase/article/details/83095458
+
+问题二：重复发布
+
+https://blog.csdn.net/FRIGIDWINTER/article/details/126291629
