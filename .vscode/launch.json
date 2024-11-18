@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "e:/ALL_CODE/SLAM/SLAM_NAV_ST/jetson_foxy/ros2_study_ws/SLAM_Tutorials/src/rs_lidar_pkg/src",
+      "program": "e:/ALL_CODE/SLAM/SLAM_NAV_ST/jetson_foxy/ros2_study_ws/SLAM_Tutorials/src/rs_lidar_pkg/src/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
