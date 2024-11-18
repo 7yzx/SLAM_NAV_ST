@@ -51,10 +51,6 @@ enum {
 };
 using namespace sl;
 
-float angle_min_origin = 0.0;
-float angle_max_origin = 360.0;
-
-
 ILidarDriver * drv = NULL;
 
 void publish_scan(ros::Publisher *pub,
@@ -71,7 +67,6 @@ void publish_scan(ros::Publisher *pub,
     scan_msg.header.stamp = start;
     scan_msg.header.frame_id = frame_id;
     scan_count++;
-
     
     bool reversed = (angle_max > angle_min);
     if ( reversed ) {
@@ -89,22 +84,16 @@ void publish_scan(ros::Publisher *pub,
     scan_msg.range_min = 0.15;
     scan_msg.range_max = max_distance;//8.0;
 
-
     scan_msg.intensities.resize(node_count);
-    scan_msg.ranges.resize(node_count);  // node count = 1947
+    scan_msg.ranges.resize(node_count);
     bool reverse_data = (!inverted && reversed) || (inverted && !reversed);
     if (!reverse_data) {
         for (size_t i = 0; i < node_count; i++) {
-            
             float read_value = (float) nodes[i].dist_mm_q2/4.0f/1000;
             if (read_value == 0.0)
                 scan_msg.ranges[i] = std::numeric_limits<float>::infinity();
             else
-                if (i >=node_count*140/360 && i <= node_count*220/360){
-                    scan_msg.ranges[i] = std::numeric_limits<float>::infinity();
-                } else {
-                    scan_msg.ranges[i] = read_value;
-                }
+                scan_msg.ranges[i] = read_value;
             scan_msg.intensities[i] = (float) (nodes[i].quality >> 2);
         }
     } else {
@@ -113,10 +102,7 @@ void publish_scan(ros::Publisher *pub,
             if (read_value == 0.0)
                 scan_msg.ranges[node_count-1-i] = std::numeric_limits<float>::infinity();
             else
-                if (i >=node_count*140/360 && i <= node_count*220/360){
-                    scan_msg.ranges[node_count-1-i] = std::numeric_limits<float>::infinity();
-                }else 
-                    scan_msg.ranges[node_count-1-i] = read_value;
+                scan_msg.ranges[node_count-1-i] = read_value;
             scan_msg.intensities[node_count-1-i] = (float) (nodes[i].quality >> 2);
         }
     }
@@ -242,7 +228,7 @@ int main(int argc, char * argv[]) {
     std::string udp_ip;
     int udp_port = 8089;
     std::string serial_port;    
-    int serial_baudrate = 256000;
+    int serial_baudrate = 115200;
     std::string frame_id;
     bool inverted = false;
     bool initial_reset = false;
@@ -261,8 +247,8 @@ int main(int argc, char * argv[]) {
     nh_private.param<std::string>("udp_ip", udp_ip, "192.168.11.2"); 
     nh_private.param<int>("udp_port", udp_port, 8089);
     nh_private.param<std::string>("serial_port", serial_port, "/dev/ttyUSB0"); 
-    nh_private.param<int>("serial_baudrate", serial_baudrate, 1000000/*256000*/);//ros run for A1 A2 115200, change to 256000 if A3
-    nh_private.param<std::string>("frame_id", frame_id, "base_laser_link");
+    nh_private.param<int>("serial_baudrate", serial_baudrate, 115200/*256000*/);//ros run for A1 A2, change to 256000 if A3
+    nh_private.param<std::string>("frame_id", frame_id, "laser_frame");
     nh_private.param<bool>("inverted", inverted, false);
     nh_private.param<bool>("initial_reset", initial_reset, false);
     nh_private.param<bool>("angle_compensate", angle_compensate, false);
@@ -423,8 +409,8 @@ int main(int argc, char * argv[]) {
                 continue;
             }
             op_result = drv->ascendScanData(nodes, count);
-            float angle_min = DEG2RAD(angle_min_origin);
-            float angle_max = DEG2RAD(angle_max_origin);
+            float angle_min = DEG2RAD(0.0f);
+            float angle_max = DEG2RAD(360.0f);
             if (op_result == SL_RESULT_OK) {
                 if (angle_compensate) {
                     const int angle_compensate_nodes_count = 360*angle_compensate_multiple;

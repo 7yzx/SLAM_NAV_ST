@@ -48,6 +48,12 @@ https://answers.ros.org/question/188847/hydro-error-in-move_baselaunch/
 
 meter_scoring : true
 
+
+#### 导航问题
+ WARN] [1731939467.152310401]: The robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+
+https://blog.csdn.net/markchalse/article/details/107032550
+
 #### map更新
 
 [ WARN] [1731850775.977229267]: Map update loop missed its desired rate of 10.0000Hz... the loop actually took 4.8501 seconds
