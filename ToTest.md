@@ -1,14 +1,24 @@
 需要在小车上进行的test文件，
 
+
+## 11.18 测试
+
+* [ ] 使用别的融合方式，看看效果https://blog.csdn.net/KYJL888/article/details/113315100   https://www.ncnynl.com/archives/201708/1909.html
+* [ ] 使用3d雷达看看
+* [ ] 解决map更新的方法
+  * [ ] 在map中把分辨率调大一些。
+  * [ ] 
+
+
+
+
+
 ## 11.17 需要测试
 
 急需解决的问题
 
 * [ ] 遇到的问题nav中那些参数到底怎么回事啊
 * [ ] robot_location 为什么没有发布odom 到base_link
-
-
-
 * [ ] robot_location  融合一下imu和odom，这个用不了就用https://blog.csdn.net/KYJL888/article/details/113315100   https://www.ncnynl.com/archives/201708/1909.html
 * [ ] 以及使用odom的cartographer建图效果，
 * [ ] 并且尝试在程序里写一个巡航的功能。
@@ -25,23 +35,18 @@ catkin_create_pkg gmapping_my_pkg std_msgs roscpp rospy sensor_msgs message_gene
 
 参考的是[ekf_gmapping_steer_mini_sensors](Docker_noetic\neor_mini\mini_sim18_ws\src\mini_gmapping\launch\ekf_gmapping_steer_mini_sensors.launch)
 
-
-
-
 ## BUG记录
 
 ### move_base中
+
 不错的解决方案
 https://blog.csdn.net/YiYeZhiNian/article/details/122351506
-1. 
 
 [ WARN] [1731850170.450399371]: Trajectory Rollout planner initialized with param meter_scoring not set. Set it to true to make your settings robust against changes of costmap resolution.
 
 https://answers.ros.org/question/188847/hydro-error-in-move_baselaunch/
 
 meter_scoring : true
-
-
 
 2
 
