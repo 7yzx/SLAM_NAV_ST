@@ -46,3 +46,8 @@ DWAPlannerROS:
 
   # 差分驱动机器人配置
   holonomic_robot: true # 是否全向移动机器人
+
+
+### if use this please add to move_base.launch
+        # <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
+        # <rosparam file="$(find nav_pkg)/param/dwa_local_planner_params.yaml" command="load" />
