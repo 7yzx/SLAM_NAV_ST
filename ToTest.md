@@ -1,17 +1,12 @@
 需要在小车上进行的test文件，
 
-
 ## 11.18 测试
 
 * [ ] 使用别的融合方式，看看效果https://blog.csdn.net/KYJL888/article/details/113315100   https://www.ncnynl.com/archives/201708/1909.html
 * [ ] 使用3d雷达看看
 * [ ] 解决map更新的方法
   * [ ] 在map中把分辨率调大一些。
-  * [ ] 
-
-
-
-
+  * [ ]
 
 ## 11.17 需要测试
 
@@ -48,8 +43,8 @@ https://answers.ros.org/question/188847/hydro-error-in-move_baselaunch/
 
 meter_scoring : true
 
-
 #### 导航问题
+
  WARN] [1731939467.152310401]: The robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
 
 https://blog.csdn.net/markchalse/article/details/107032550
@@ -60,9 +55,6 @@ https://blog.csdn.net/markchalse/article/details/107032550
 
 cpu 性能不够，地图太大了。
 
-
-
-
 #### 融合ekf
 
 问题一：odom斜方差
@@ -71,3 +63,5 @@ https://blog.csdn.net/datase/article/details/83095458
 问题二：重复发布
 
 https://blog.csdn.net/FRIGIDWINTER/article/details/126291629
+
+因为ekf会发布一个odom到base_link，所以需要在roborts_bring中注释掉。
