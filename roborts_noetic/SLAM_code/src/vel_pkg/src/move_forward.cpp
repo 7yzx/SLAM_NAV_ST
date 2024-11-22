@@ -6,8 +6,8 @@
 void moveForward(ros::Publisher &pub, double distance) {
     // 创建速度消息
     geometry_msgs::Twist move_cmd;
-    move_cmd.linear.x = 0.2;  // 前进速度（米/秒）
-    move_cmd.angular.z = 0.0;  // 不旋转
+    move_cmd.linear.x = 0;  // 前进速度（米/秒）
+    move_cmd.angular.z = 0;  // 不旋转
 
     // 计算前进的时间
     double time_to_move = distance / move_cmd.linear.x; // 计算时间
@@ -18,10 +18,12 @@ void moveForward(ros::Publisher &pub, double distance) {
     while (ros::ok() && (ros::Time::now().toSec() - start_time) < time_to_move) {
         pub.publish(move_cmd);
         rate.sleep();
+        move_cmd.angular.z = 0.2;  // 不旋转
     }
 
     // 停止小车
     move_cmd.linear.x = 0.0;
+    
     pub.publish(move_cmd);
 }
 

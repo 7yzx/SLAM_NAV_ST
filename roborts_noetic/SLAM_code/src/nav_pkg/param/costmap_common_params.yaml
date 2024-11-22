@@ -1,9 +1,9 @@
   footprint: [[-0.3, -0.3], [-0.3, 0.3], [0.3, 0.3], [0.3, -0.3]] #其他形状
   #robot_radius: 0.105
   obstacle_range: 1.0  #更新以机器人为中心，按此数值为半径内的障碍物信息。
-  raytrace_range: 3.5  #更新以机器人为中心，按此数值为半径内的自由空间。
+  raytrace_range: 1  #更新以机器人为中心，按此数值为半径内的自由空间。
 
-  inflation_radius: 0.4 #设置代价地图膨胀半径。可以理解以机器人为中心膨胀半径为此数值内不能有障碍物出现。
+  inflation_radius: 0.2 #设置代价地图膨胀半径。可以理解以机器人为中心膨胀半径为此数值内不能有障碍物出现。
   cost_scaling_factor: 3.0
 
   # map_type: costmap

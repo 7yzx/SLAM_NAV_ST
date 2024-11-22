@@ -44,10 +44,18 @@ https://answers.ros.org/question/188847/hydro-error-in-move_baselaunch/
 meter_scoring : true
 
 #### 导航问题
-
+1. 
  WARN] [1731939467.152310401]: The robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
 
 https://blog.csdn.net/markchalse/article/details/107032550
+
+
+2. Extrapolation Error: Lookup would require extrapolation -0.002873451s into the future.  Requested time 1732158883.053146601 but the latest data is at time 1732158883.050273180, when looking up transform from frame [odom] to frame [map]
+
+3. Could not transform the global plan to the frame of the controller
+local_costmap中写错了
+
+https://blog.csdn.net/weixin_72050316/article/details/136750864
 
 #### map更新
 
